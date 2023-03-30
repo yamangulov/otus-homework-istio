@@ -72,7 +72,6 @@ export PATH=$HOME/.istioctl/bin:$PATH
 
 10. Готовим и запускаем балансировку двух версий приложения
 
-![img_24.png](img_24.png)
 
 [манифесты для запуска объектов kubernetes](manifests)
 
