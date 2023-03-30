@@ -89,7 +89,7 @@ export PATH=$HOME/.istioctl/bin:$PATH
 
 ![img_26.png](img_26.png)
 
-в результате получим [диаграмму](/home/stranger/Изображения/kiali-diagram-result.jpg) в Kilio, отображающую трафик и схему istio
+в результате получим [диаграмму](kiali-diagram-result.jpg) в Kilio, отображающую трафик и схему istio
 
-![](/media/stranger/repo/otus-homework-istio/kiali-diagram-result.jpg)
+![](kiali-diagram-result.jpg)
 
