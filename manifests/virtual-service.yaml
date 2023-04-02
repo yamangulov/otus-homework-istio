@@ -4,7 +4,7 @@ metadata:
   name: echoservice-virtualservice
 spec:
   hosts:
-    - istio.homework
+    - "*"
   gateways:
     - echoserver-gateway
   http:

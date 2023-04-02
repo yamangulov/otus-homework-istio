@@ -81,15 +81,27 @@ export PATH=$HOME/.istioctl/bin:$PATH
 
 ![img_25.png](img_25.png)
 
-так как никакого ingress внутрь minikube я не настраивал, можно проверить трафик istio просто изнутри кластера кубера, для этого зайдем в кластер командой
+необходимо также открыть для minikube туннель, иначе не будет доступа снаружи кластера и istio-ingressgateway будет все время в статусе pending
 
-`minikube -p minikube-old ssh`
+`minikube -p minikube-old tunnel` и через некоторое время ввести пароль root
 
-и что-нибудь пошлем в шлюз, можно пинг, можно curl
+![img_24.png](img_24.png)
 
-![img_26.png](img_26.png)
+затем дважды проверим работу istio - один раз прямо внутри кластера, зайдя в него по ssh командой minikube -p minikube-old ssh и затем curl на external ip
+
+![img_27.png](img_27.png)
+
+затем проверяем доступ извне кластера по тому же ip
+
+![img_28.png](img_28.png)
+
+а также проверим работу через браузер
+
+![img_29.png](img_29.png)
 
 в результате получим [диаграмму](kiali-diagram-result.jpg) в Kilio, отображающую трафик и схему istio
+
+мы видим на ней два источника - unknown это для случая, когда я курлил сервис изнутри кластера, а именованный источник - для случаев, когда я курлил сервис через istio-ingressgateway
 
 ![](kiali-diagram-result.jpg)
 
